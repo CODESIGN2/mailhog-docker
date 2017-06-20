@@ -1,8 +1,8 @@
 FROM armhf/alpine:3.5
-AUTHOR CD2Team <codesign2@icloud.com>
+MAINTAINER CD2Team <codesign2@icloud.com>
 
 RUN set -x \
-  && buildDeps='go git bzr' \
+  && buildDeps='go git bzr musl-dev' \
   && apk add --update $buildDeps \
   && GOPATH=/tmp/gocode go get github.com/mailhog/MailHog \
   && mv /tmp/gocode/bin/MailHog /usr/local/bin/ \
