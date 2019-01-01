@@ -1,5 +1,5 @@
-FROM armhf/alpine:3.5
-MAINTAINER CD2Team <codesign2@icloud.com>
+FROM alpine:latest
+MAINTAINER CD2Team <lewiscowles@me.com>
 
 RUN set -x \
   && buildDeps='go git bzr musl-dev' \
@@ -11,3 +11,4 @@ RUN set -x \
 
 EXPOSE 1025 8025
 ENTRYPOINT ["MailHog"]
+
