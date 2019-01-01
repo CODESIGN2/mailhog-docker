@@ -1,23 +1,33 @@
-# mailhog-docker-rpi
-Raspberry Pi Docker Raspberry Pi
+# mailhog-docker
+
+Docker Mailhog, which works on a Raspberry Pi. Originally this was a raspberry pi only image, but now docker has more stable support for multi-arch you can build the same alpine for x86 as various arm flavours. [They even support windows](https://docs.docker.com/docker-for-windows/). In-theory even windows users can create an issue if you cannot run this. In practice, I don't have a license to a windows with docker runtime, so it may take some time and cause frustration.
 
 ## Setup
 
-You need [Docker runtime installed on your rpi](https://www.raspberrypi.org/blog/docker-comes-to-raspberry-pi/)
+You need Docker runtime installed, and access to a user that can download, build and run docker images.
 
-## Build
+- [on your rpi](https://www.raspberrypi.org/blog/docker-comes-to-raspberry-pi/)
+- [on other platforms](https://docs.docker.com/install/)
+
+### I can't run docker after installing
+
+- try `sudo usermod -aG docker $USERNAME`, followed by logging in and out, or rebooting your device. It basically says "Hey add my user to the group that has permissions to run docker please."
+
+## Build (optional for x86 users)
 
 ```
-git clone https://github.com/Lewiscowles1986/mailhog-docker-rpi
-cd mailhog-docker-rpi
-docker build -t mailhog:alpine-pi .
+git clone https://github.com/Lewiscowles1986/mailhog-docker
+cd mailhog-docker
+docker build -t mailhog:alpine -t mailhog:latest .
 ```
 
 ## Run
 
 ```
-docker run --restart always --name mailhog -p 1025:1025 -p 8025:8025 -d mailhog:alpine-pi
+docker run --restart always --name mailhog -p 1025:1025 -p 8025:8025 -d mailhog:alpine
 ```
+
+There is also a pre-built x86 version under `cd2team/mailhog` with both `alpine` and `latest` tags. I may in the future decide to move to a `YYYY-MM-DD-HHMMSS` version of tagging in addition using `date +"%Y-%m-%d-%H%M%S"` or similar, just so that we can maintain history when re-tagging a `latest` and `alpine`
 
 ## Troubleshooting
 
