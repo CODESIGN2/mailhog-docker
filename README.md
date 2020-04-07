@@ -23,11 +23,23 @@ docker build -t mailhog:alpine -t mailhog:latest .
 
 ## Run
 
+### After build
+
 ```
 docker run --restart always --name mailhog -p 1025:1025 -p 8025:8025 -d mailhog:alpine
 ```
 
-There is also a pre-built x86 version under `cd2team/mailhog` with both `alpine` and `latest` tags. I may in the future decide to move to a `YYYY-MM-DD-HHMMSS` version of tagging in addition using `date +"%Y-%m-%d-%H%M%S"` or similar, just so that we can maintain history when re-tagging a `latest` and `alpine`
+### From latest on dockerhub
+
+```
+docker run --restart always --name mailhog -p 1025:1025 -p 8025:8025 -d cd2team/mailhog:latest
+```
+
+There is also a pre-built x86 version under `cd2team/mailhog` with `latest` tag for rolling release built, tagged and pushed using Github Actions.
+
+There are additionally `{timestamp}` version of tags, so that it's easy to maintain history when re-tagging a `latest` and `alpine`, and if you encounter issues with a `latest` tag.
+
+> **NOTE:** At present the automated builds are only run on x86 targets. If anyone has suggestions for this using GitHub actions, TravisCi, CircleCi, SemaphoreCI or another Cloud SaaS provider, please provide them via issue, or make a PR.
 
 ## Troubleshooting
 
