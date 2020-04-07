@@ -1,6 +1,8 @@
 name: Publish to Dockerhub
 
 on:
+  schedule:
+  - cron: '0 0 1 * 0'
   push:
     branches: [ master ]
 
