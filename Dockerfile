@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER CD2Team <lewiscowles@me.com>
+MAINTAINER CD2Team <codesign2@icloud.com>
 
 RUN set -x \
   && buildDeps='go git bzr musl-dev' \

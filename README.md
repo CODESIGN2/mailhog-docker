@@ -16,7 +16,7 @@ You need Docker runtime installed, and access to a user that can download, build
 ## Build (optional for x86 users)
 
 ```
-git clone https://github.com/Lewiscowles1986/mailhog-docker
+git clone https://github.com/CODESIGN2/mailhog-docker
 cd mailhog-docker
 docker build -t mailhog:alpine -t mailhog:latest .
 ```
@@ -65,7 +65,6 @@ This could also be useful for testing IoT email notifications if the edges are e
 ## Improvements
 
 * Deploy script
-* Dockerhub image
 * Links to other resources (tutorials, cool projects that use this etc)
 
 ## Special Thanks to
