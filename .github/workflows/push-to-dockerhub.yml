@@ -1,0 +1,24 @@
+name: Publish to Dockerhub
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to dockerhub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+    - name: Build the docker image
+      run: docker build . --file Dockerfile --tag cd2team/mailhog:build
+    - name: Tag and push
+      run: |
+        docker tag cd2team/mailhog:build cd2team/mailhog:latest
+        docker tag cd2team/mailhog:latest cd2team/mailhog:$(date +%s)
+        docker push cd2team/mailhog:$(date +%s)
+        docker push cd2team/mailhog:latest
