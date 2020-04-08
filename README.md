@@ -35,11 +35,9 @@ docker run --restart always --name mailhog -p 1025:1025 -p 8025:8025 -d mailhog:
 docker run --restart always --name mailhog -p 1025:1025 -p 8025:8025 -d cd2team/mailhog:latest
 ```
 
-There is also a pre-built x86 version under `cd2team/mailhog` with `latest` tag for rolling release built, tagged and pushed using Github Actions.
+There are also pre-built versions under `cd2team/mailhog` with `latest` tag for rolling release built, tagged and pushed using Github Actions. It's not robustly tested, but the tagging strategy used also means a timestamp release is published to ensure you can pin dependency versions.
 
-There are additionally `{timestamp}` version of tags, so that it's easy to maintain history when re-tagging a `latest` and `alpine`, and if you encounter issues with a `latest` tag.
-
-> **NOTE:** At present the automated builds are only run on x86 targets. If anyone has suggestions for this using GitHub actions, TravisCi, CircleCi, SemaphoreCI or another Cloud SaaS provider, please provide them via issue, or make a PR.
+The additional `{timestamp}` version of tags make it easy to maintain history when re-tagging a `latest` and `alpine`. If you encounter issues with a `latest` tag, please try the timestamp from your last successful build, which will share a hash with your last working `latest`.
 
 ## Troubleshooting
 
