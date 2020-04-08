@@ -8,6 +8,19 @@ on:
 
 jobs:
 
+  crossbuild:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Docker Buildx
+      id: buildx
+      uses: crazy-max/ghaction-docker-buildx@v1
+      with:
+      version: latest
+    - name: Available platforms
+      run: echo ${{ steps.buildx.outputs.platforms }}
+
   build:
 
     runs-on: ubuntu-latest
