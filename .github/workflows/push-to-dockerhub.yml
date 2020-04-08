@@ -59,7 +59,6 @@ jobs:
           --build-arg "VCS_REF=${GITHUB_SHA::8}" \
           --tag "${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }}" \
           --tag "${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.build_date }}" \
-          --tag "${{ steps.prepare.outputs.docker_image }}:latest" \
           --file Dockerfile .
     - name: Clear
       if: always()
