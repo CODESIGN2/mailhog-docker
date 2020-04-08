@@ -25,7 +25,7 @@ jobs:
         else
           echo ::set-output name=version::snapshot
         fi
-        echo ::set-output name=build_date::$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+        echo ::set-output name=build_date::$(date +%s)
         echo ::set-output name=docker_platforms::linux/386,linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
         echo ::set-output name=docker_image::${{ secrets.DOCKER_USERNAME }}/mailhog
     - name: Set up Docker Buildx
