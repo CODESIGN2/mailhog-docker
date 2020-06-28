@@ -52,13 +52,13 @@ The additional `{timestamp}` version of tags make it easy to maintain history wh
 - [ ] Have you identified which part of this you'd like to make changes to?
 - [ ] Do you know this is basically a bundle of parts and want to improve this (so mailhog improvements go to their project(s), this one will osmose them, same with docker & alpine)?
 - [ ] Have you checked the license `GPL-3.0` and decided you wish to contribute under that license?
-- [ ] Please raise an issue before submitting a pull-request
+- [ ] Please raise an [issue](https://github.com/CODESIGN2/mailhog-docker/issues/new) before [submitting a pull-request](https://github.com/CODESIGN2/mailhog-docker/compare)
 
 ## Goals
 
 ### Convenience
 
-[Mailhog](https://github.com/mailhog/MailHog) is great. Raspberry Pi's are cheap, convenient, and when paired with device-mode, it's a really easy setup for convinient, isolated functionality. 
+[Mailhog](https://github.com/mailhog/MailHog) is great. Raspberry Pi's are cheap, convenient, and when paired with device-mode, it's a really easy setup for convenient, isolated functionality. 
 
 ### Interoperability
 
