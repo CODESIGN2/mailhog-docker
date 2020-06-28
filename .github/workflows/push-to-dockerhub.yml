@@ -34,9 +34,10 @@ jobs:
         echo ::set-output name=docker_image::${{ secrets.DOCKER_USERNAME }}/mailhog
     - name: Set up Docker Buildx
       id: buildx
-      uses: crazy-max/ghaction-docker-buildx@v1
+      uses: crazy-max/ghaction-docker-buildx@v3
       with:
         buildx-version: latest
+        qemu-version: latest
     - name: Environment
       run: |
         echo home=$HOME
