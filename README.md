@@ -79,7 +79,9 @@ This could also be useful for testing IoT email notifications if the edges are e
 
 ## Special Thanks to
 
-* [Docker](https://www.docker.com/) - for working on the packaging, distribution, runtime
-* [GBAMan](http://blog.gbaman.info/?p=791) - for documenting device-mode extensions for raspberry pi so well
-* [Alpine Project](https://alpinelinux.org/) - for making lightweight docker-images that have less moving parts
-* [MailHog](https://github.com/mailhog/MailHog) - for making the program we run in docker, on alpine, and I combine with device-mode on a raspberry pi zero
+* [Docker](https://www.docker.com/) - for working on the packaging, distribution, runtime.
+* [GBAMan](http://blog.gbaman.info/?p=791) - for documenting device-mode extensions for raspberry pi so well.
+* [Alpine Project](https://alpinelinux.org/) - for making lightweight docker-images that have less moving parts.
+* [MailHog](https://github.com/mailhog/MailHog) - for making the program we run in docker, on alpine, and I combine with device-mode on a raspberry pi zero.
+* [GitHub & Actions team](https://github.com) - Wonderful humans, making cool tools.
+* [CrazyMax BuildX](https://github.com/crazy-max/ghaction-docker-buildx) - Without this it would be much harder to supply multi-device-architecture images. 
