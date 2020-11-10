@@ -11,9 +11,7 @@ on:
       - main
 
 jobs:
-
   crossbuild:
-
     runs-on: ubuntu-latest
 
     steps:
