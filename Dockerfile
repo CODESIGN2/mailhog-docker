@@ -1,4 +1,5 @@
-FROM golang:1.14-alpine as builder
+ARG GOTAG=1.14-alpine
+FROM golang:${GOTAG} as builder
 MAINTAINER CD2Team <codesign2@icloud.com>
 
 RUN set -x \
