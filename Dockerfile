@@ -5,7 +5,7 @@ MAINTAINER CD2Team <codesign2@icloud.com>
 RUN set -x \
   && buildDeps='git musl-dev gcc' \
   && apk add --update $buildDeps \
-  && GOPATH=/tmp/gocode go get github.com/mailhog/MailHog
+  && GOPATH=/tmp/gocode go install github.com/mailhog/MailHog@latest
 
 FROM alpine:latest
 WORKDIR /bin
