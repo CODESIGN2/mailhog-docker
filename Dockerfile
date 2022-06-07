@@ -1,4 +1,4 @@
-ARG GOTAG=1.15-alpine
+ARG GOTAG=1.16-alpine
 FROM golang:${GOTAG} as builder
 MAINTAINER CD2Team <codesign2@icloud.com>
 
