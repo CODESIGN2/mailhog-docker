@@ -15,6 +15,10 @@ on:
         description: "Which release of mailhog github would you like to use?"
         default: latest
         required: true
+      docker_tag:
+        description: "Docker tag"
+        default: snapshot
+        required: true
 
 
 jobs:
@@ -29,14 +33,10 @@ jobs:
           echo ::set-output name=version::${GITHUB_REF#refs/tags/v}
         elif [[ $GITHUB_REF == refs/heads/main ]]; then
           echo ::set-output name=version::latest
-        #
-        # branch (deprecated as needs some replacement logic to be compatible with docker-tags)
-        #
-        # elif [[ $GITHUB_REF == refs/heads/* ]]; then
-        #  echo ::set-output name=version::${GITHUB_REF#refs/heads/}
-        #
-        else
+        elif [[ -z "${{ github.event.inputs.docker_tag }}" ]]; then
           echo ::set-output name=version::snapshot
+        else
+          echo ::set-output name=version::${{ github.event.inputs.docker_tag }}
         fi
         if [[ -z "${{ github.event.inputs.mailhog_version }}" ]]; then
           echo ::set-output name=mailhog_version::latest
