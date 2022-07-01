@@ -34,7 +34,7 @@ jobs:
         else
           echo ::set-output name=version::snapshot
         fi
-        if [[ -z "${{ github.event.inputs.message }}" ]]; then
+        if [[ -z "${{ github.event.inputs.mailhog_version }}" ]]; then
           echo ::set-output name=mailhog_version::latest
         else
           echo ::set-output name=mailhog_version::${{ github.event.inputs.mailhog_version }}
