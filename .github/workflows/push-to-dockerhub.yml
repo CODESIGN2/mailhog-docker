@@ -10,6 +10,11 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      mailhog_version:
+        description: "Which release of mailhog github would you like to use?"
+        default: latest
+        required: true
 
 
 jobs:
