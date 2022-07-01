@@ -1,6 +1,6 @@
 ARG GOTAG=1.18-alpine
-ARG MAILHOG_VERSION=latest
 FROM golang:${GOTAG} as builder
+ARG MAILHOG_VERSION=latest
 MAINTAINER CD2Team <codesign2@icloud.com>
 
 RUN set -x \
