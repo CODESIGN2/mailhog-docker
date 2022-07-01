@@ -29,8 +29,12 @@ jobs:
           echo ::set-output name=version::${GITHUB_REF#refs/tags/v}
         elif [[ $GITHUB_REF == refs/heads/main ]]; then
           echo ::set-output name=version::latest
-        elif [[ $GITHUB_REF == refs/heads/* ]]; then
-          echo ::set-output name=version::${GITHUB_REF#refs/heads/}
+        #
+        # branch (deprecated as needs some replacement logic to be compatible with docker-tags)
+        #
+        # elif [[ $GITHUB_REF == refs/heads/* ]]; then
+        #  echo ::set-output name=version::${GITHUB_REF#refs/heads/}
+        #
         else
           echo ::set-output name=version::snapshot
         fi
