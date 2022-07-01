@@ -30,9 +30,9 @@ jobs:
           echo ::set-output name=version::snapshot
         fi
         if [[ -z "${{ github.event.inputs.message }}" ]]; then
-          echo ::set-output name=mailhog-version::latest
+          echo ::set-output name=mailhog_version::latest
         else
-          echo ::set-output name=mailhog-version::${{ github.event.inputs.mailhog_version }}
+          echo ::set-output name=mailhog_version::${{ github.event.inputs.mailhog_version }}
         fi
         echo ::set-output name=build_date::$(date +%s)
         echo ::set-output name=docker_platforms::linux/386,linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
@@ -50,6 +50,7 @@ jobs:
         echo git_ref=$GITHUB_REF
         echo git_sha=$GITHUB_SHA
         echo version=${{ steps.prepare.outputs.version }}
+        echo mailhog_version=${{ steps.prepare.outputs.mailhog_version }}
         echo date=${{ steps.prepare.outputs.build_date }}
         echo image=${{ steps.prepare.outputs.docker_image }}
         echo platforms=${{ steps.prepare.outputs.docker_platforms }}
