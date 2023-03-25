@@ -1,0 +1,13 @@
+{
+  "icon": "hog.png",
+  "vm": {
+    "image":"${DESKTOP_PLUGIN_IMAGE}"
+  },
+  "ui": {
+    "dashboard-tab": {
+      "title": "MailHog",
+      "root": "/ui",
+      "src": "index.html"
+    }
+  }
+}
