@@ -1,7 +1,7 @@
 {
   "icon": "hog.png",
   "vm": {
-    "image":"${DESKTOP_PLUGIN_IMAGE}"
+    "composefile": "docker-compose.yaml"
   },
   "ui": {
     "dashboard-tab": {
