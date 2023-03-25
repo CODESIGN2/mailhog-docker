@@ -1,0 +1,13 @@
+{
+  "icon": "hog.svg",
+  "vm": {
+    "composefile": "docker-compose.yaml"
+  },
+  "ui": {
+    "dashboard-tab": {
+      "title": "MailHog",
+      "root": "/ui",
+      "src": "index.html"
+    }
+  }
+}
