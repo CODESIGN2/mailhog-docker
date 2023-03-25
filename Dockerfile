@@ -17,6 +17,7 @@ LABEL org.opencontainers.image.title="MailHog" \
 
 COPY ui /ui
 COPY metadata.json .
+COPY docker-compose.yaml .
 COPY hog.png .
 
 WORKDIR /bin
