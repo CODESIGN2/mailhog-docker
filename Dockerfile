@@ -9,7 +9,7 @@ RUN set -x \
   && GOPATH=/tmp/gocode go install github.com/mailhog/MailHog@${MAILHOG_VERSION}
 
 FROM alpine:latest
-LABEL org.opencontainers.image.title="MailHog for Docker" \
+LABEL org.opencontainers.image.title="MailHog" \
     org.opencontainers.image.description="An extension to using an existing Dockerfile to also create a Docker Desktop Extension." \
     org.opencontainers.image.vendor="CODESIGN2" \
     com.docker.desktop.extension.api.version="0.0.1" \
