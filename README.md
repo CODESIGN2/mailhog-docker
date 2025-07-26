@@ -1,5 +1,7 @@
 # mailhog-docker
 
+[🐳 DockerHub](https://hub.docker.com/r/cd2team/mailhog/tags)
+
 Docker Mailhog, which works on a Raspberry Pi. Originally this was a raspberry pi only image, but now docker has more stable support for multi-arch you can build the same alpine for x86 as various arm flavours. [They even support windows](https://docs.docker.com/docker-for-windows/). In-theory even windows users can create an issue if you cannot run this. In practice, I don't have a license to a windows with docker runtime, so it may take some time and cause frustration.
 
 ## Setup
