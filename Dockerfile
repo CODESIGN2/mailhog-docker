@@ -1,7 +1,7 @@
 ARG GOTAG=1.24-alpine
 FROM golang:${GOTAG} AS builder
 ARG MAILHOG_VERSION=latest
-MAINTAINER CD2Team <codesign2@icloud.com>
+LABEL org.opencontainers.image.authors="CD2Team <codesign2@icloud.com>"
 
 RUN set -x \
   && buildDeps='git musl-dev gcc' \
