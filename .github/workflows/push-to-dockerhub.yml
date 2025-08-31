@@ -30,22 +30,22 @@ jobs:
       id: prepare
       run: |
         if [[ $GITHUB_REF == refs/tags/* ]]; then
-          echo ::set-output name=version::${GITHUB_REF#refs/tags/v}
+          echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
         elif [[ $GITHUB_REF == refs/heads/main ]]; then
-          echo ::set-output name=version::latest
+          echo "version=latest" >> $GITHUB_OUTPUT
         elif [[ -z "${{ github.event.inputs.docker_tag }}" ]]; then
-          echo ::set-output name=version::snapshot
+          echo "version=snapshot" >> $GITHUB_OUTPUT
         else
-          echo ::set-output name=version::${{ github.event.inputs.docker_tag }}
+          echo "version=${{ github.event.inputs.docker_tag }}" >> $GITHUB_OUTPUT
         fi
         if [[ -z "${{ github.event.inputs.mailhog_version }}" ]]; then
-          echo ::set-output name=mailhog_version::latest
+          echo "mailhog_version=latest" >> $GITHUB_OUTPUT
         else
-          echo ::set-output name=mailhog_version::${{ github.event.inputs.mailhog_version }}
+          echo "mailhog_version=${{ github.event.inputs.mailhog_version }}" >> $GITHUB_OUTPUT
         fi
-        echo ::set-output name=build_date::$(date +%s)
-        echo ::set-output name=docker_platforms::linux/386,linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
-        echo ::set-output name=docker_image::${{ secrets.DOCKER_USERNAME }}/mailhog
+        echo "build_date=$(date +%s)" >> $GITHUB_OUTPUT
+        echo "docker_platforms=linux/386,linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64" >> $GITHUB_OUTPUT
+        echo "docker_image=${{ secrets.DOCKER_USERNAME }}/mailhog" >> $GITHUB_OUTPUT
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
       with:
