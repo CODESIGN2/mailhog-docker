@@ -1,5 +1,5 @@
-ARG GOTAG=1.18-alpine
-FROM golang:${GOTAG} as builder
+ARG GOTAG=1.24-alpine
+FROM golang:${GOTAG} AS builder
 ARG MAILHOG_VERSION=latest
 MAINTAINER CD2Team <codesign2@icloud.com>
 
